@@ -50,6 +50,10 @@ return {
                 edit = "<CR>",
             },
         },
+        hover_doc = {
+            max_width = 0.5,
+            max_height = 0.4,
+        },
     },
     keys = {
         -- leader key
@@ -80,6 +84,22 @@ return {
                 vim.cmd "Lspsaga hover_doc"
             end,
             desc = "Hove document",
+        },
+        {
+            "<A-k>",
+            function()
+                vim.cmd "Lspsaga hover_doc"
+            end,
+            desc = "Hove document",
+            mode = { "i" },
+        },
+        {
+            "<A-K>",
+            function()
+                vim.cmd "Lspsaga hover_doc ++keep"
+            end,
+            desc = "Hove document",
+            mode = { "i" },
         },
         {
             "<leader>o",

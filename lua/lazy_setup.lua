@@ -53,9 +53,30 @@ require("lazy").setup({
         url_format = vim.env.GITHUB,
         log = { "-2" },
     },
+    lockfile = vim.fn.stdpath "config" .. "/lazy-lock.json", -- lockfile generated after running update.
+    install = { colorscheme = { "catppuccin" } },
+    defaults = {
+        autocmds = true, -- lazyvim.config.autocmds
+        keymaps = true, -- lazyvim.config.keymaps
+    },
+    news = {
+        -- When enabled, NEWS.md will be shown when changed.
+        -- This only contains big new features and breaking changes.
+        lazyvim = true,
+        -- Same but for Neovim's news.txt
+        neovim = false,
+    },
     change_detection = {
         -- automatically check for config file changes and reload the ui
         enabled = false,
         notify = false, -- get a notification when changes are found
+    },
+    performance = {
+        cache = {
+            enabled = true,
+        },
+        rtp = {
+            disabled_plugins = { "netrw", "tohtml" }, -- 禁用非必要插件
+        },
     },
 })

@@ -6,6 +6,7 @@ g.loaded_netrwPlugin = 1
 
 g.mapleader = " "
 g.maplocalleader = " "
+g.autoformat = true
 
 opt.number = true
 opt.background = "light"

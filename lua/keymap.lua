@@ -4,14 +4,10 @@ vim.cmd [[
     command Q q
     command W w
 
-    map <S-left> ^
-    map <S-right> $
-    map <M-left> b
-    map <M-right> e
-    map ; :
-    map mm %
-    map % ggVG$
-    map <leader>c gcc
+    noremap ; :
+    noremap mm %
+    noremap % ggVG$
+    noremap <leader>c gcc
 
     au VimLeave * set guicursor=a:ver25-blinkon0
 ]]
@@ -74,6 +70,8 @@ vim.keymap.set(
     { desc = "Move selection up", silent = true, noremap = true, nowait = true }
 )
 
+vim.keymap.set({ "n", "v" }, "d", '"_d')
+
 -- visual mode
 vim.keymap.set("v", "x", function()
     vim.api.nvim_feedkeys("j", "n", false)
@@ -92,4 +90,18 @@ vim.keymap.set("v", "a", function()
 end, opt)
 vim.keymap.set("v", "o", function()
     vim.api.nvim_feedkeys("o", "n", false)
+end, opt)
+
+--- insert
+vim.keymap.set({ "i", "n" }, "<A-Left>", function()
+    vim.api.nvim_feedkeys("e", "n", false)
+end, opt)
+vim.keymap.set({ "i", "n" }, "<A-Right>", function()
+    vim.api.nvim_feedkeys("b", "n", false)
+end, opt)
+vim.keymap.set({ "i", "n" }, "<S-Left>", function()
+    vim.api.nvim_feedkeys("0", "n", false)
+end, opt)
+vim.keymap.set({ "i", "n" }, "<S-Right>", function()
+    vim.api.nvim_feedkeys("$", "n", false)
 end, opt)

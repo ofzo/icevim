@@ -54,6 +54,15 @@ return {
             desc = "Last picker",
         },
         {
+            "<leader>b",
+            function()
+                local builtin = require "telescope.builtin"
+                builtin.buffers()
+            end,
+            desc = "Telescope buffers",
+        },
+
+        {
             "<leader>O",
             function()
                 local builtin = require "telescope.builtin"

@@ -83,6 +83,7 @@ return {
                 BlinkCmpDoc = { bg = color.white },
                 BlinkCmpMenuBorder = { fg = color.purple600 },
                 BlinkCmpMenuSelection = { fg = color.white, bg = color.purple600 },
+                FloatBorder = { fg = color.red600 },
             }
         end,
         integrations = {
@@ -91,16 +92,24 @@ return {
             blink_cmp = true,
             dap = false,
             dap_ui = false,
-            ufo = false,
+            ufo = true,
             dashboard = false,
-            alpha = false,
+            alpha = true,
             mini = false,
             neogit = false,
             nvimtree = false,
             semantic_tokens = false,
-            treesitter = false,
+            treesitter = true,
             treesitter_context = false,
             illuminate = false,
+            lsp_saga = true,
+            telescope = true,
+            which_key = true,
+            neotree = {
+                enabled = true,
+                show_root = true, -- makes the root folder not transparent
+                transparent_panel = false, -- make the panel transparent
+            },
         },
     },
     config = function(_, opts)

@@ -54,6 +54,7 @@ return {
         cmdline = {
             keymap = {
                 ["<CR>"] = { "accept", "accept_and_enter", "fallback" },
+                ["<Space>"] = { "accept", "fallback" },
                 ["<Tab>"] = { "show", "show_and_insert", "select_next" },
                 ["<Up>"] = { "select_prev", "fallback" },
                 ["<Down>"] = { "select_next", "fallback" },
@@ -91,6 +92,11 @@ return {
             },
         },
         -- See the fuzzy documentation for more information
-        fuzzy = { implementation = "prefer_rust_with_warning" },
+        fuzzy = {
+            implementation = "prefer_rust_with_warning",
+            prebuilt_binaries = {
+                force_version = "1.1.1",
+            },
+        },
     },
 }

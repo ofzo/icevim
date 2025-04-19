@@ -3,6 +3,7 @@ return {
     version = "*",
     lazy = true,
     event = "VeryLazy",
+    cmd = "ToggleTerm", -- 输入命令时加载
     opts = {
         --[[ things you want to change go here]]
     },
