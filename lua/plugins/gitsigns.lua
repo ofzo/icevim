@@ -29,7 +29,7 @@ return {
             function()
                 vim.cmd [[ Gitsigns reset_hunk ]]
             end,
-            desc = "Preview change",
+            desc = "Reset hunk",
         },
     },
     opts = {

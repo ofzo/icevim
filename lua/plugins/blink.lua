@@ -93,7 +93,7 @@ return {
         },
         -- See the fuzzy documentation for more information
         fuzzy = {
-            implementation = "prefer_rust_with_warning",
+            implementation = "prefer_rust",
             prebuilt_binaries = {
                 force_version = "1.1.1",
             },

@@ -50,7 +50,7 @@ return {
                 edit = "<CR>",
             },
         },
-        hover_doc = {
+        hover = {
             max_width = 0.5,
             max_height = 0.4,
         },
