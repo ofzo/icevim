@@ -84,6 +84,11 @@ return {
                 BlinkCmpMenuBorder = { fg = color.purple600 },
                 BlinkCmpMenuSelection = { fg = color.white, bg = color.purple600 },
                 FloatBorder = { fg = color.red600 },
+                SagaBorder = { fg = color.red600 },
+
+                CodeActionText = { fg = color.gray800 },
+                CodeActionNumber = { fg = color.gray800 },
+                CodeActionCursorLine = { fg = color.red100, bg = color.red100 },
             }
         end,
         integrations = {

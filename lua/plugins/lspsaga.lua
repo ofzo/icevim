@@ -53,6 +53,18 @@ return {
         hover = {
             max_width = 0.5,
             max_height = 0.4,
+            in_select = false,
+            auto_save = true,
+        },
+        lightbulb = {
+            enable = true,
+            -- 位置控制
+            sign = false,
+            virtual_text = false,
+            sign_priority = 20,
+            -- 自定义图标位置
+            update_in_insert = false,
+            enable_in_insert = true,
         },
     },
     keys = {
