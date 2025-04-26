@@ -1,3 +1,10 @@
+local width = math.floor(vim.o.columns * 0.8)
+local height = math.floor(vim.o.lines * 0.8) -- 减 4 保留状态栏/命令行空间
+
+-- 计算居中位置
+local col = (vim.o.columns - width) / 2
+local row = (vim.o.lines - height) / 2
+
 return {
     "akinsho/toggleterm.nvim",
     version = "*",
@@ -31,10 +38,12 @@ return {
                 local term = Terminal:new {
                     hidden = true,
                     direction = "float",
+                    auto_scroll = true, -- 自动滚动到底部以显示终端输出
                     float_opts = {
                         border = "rounded",
-                        width = 120,
-                        height = 25,
+                        relative = "editor",
+                        width = width,
+                        height = height,
                     },
                     highlights = {
                         FloatBorder = {
@@ -54,12 +63,22 @@ return {
             "<leader>G",
             function()
                 local Terminal = require("toggleterm.terminal").Terminal
+                local color = require "palette"
                 local lazygit = Terminal:new {
                     cmd = "lazygit",
                     hidden = true,
                     direction = "float",
                     float_opts = {
-                        border = "none",
+                        border = "rounded",
+                        relative = "editor",
+                        width = width,
+                        height = height,
+                    },
+                    highlights = {
+                        FloatBorder = {
+                            guifg = color.green600,
+                            guibg = color.white,
+                        },
                     },
                     on_open = function(term)
                         vim.api.nvim_buf_set_keymap(
@@ -90,12 +109,22 @@ return {
             "<leader>R",
             function()
                 local Terminal = require("toggleterm.terminal").Terminal
+                local color = require "palette"
                 local cmd = Terminal:new {
                     cmd = "serpl",
                     hidden = true,
                     direction = "float",
                     float_opts = {
-                        border = "none",
+                        border = "rounded",
+                        relative = "editor",
+                        width = width,
+                        height = height,
+                    },
+                    highlights = {
+                        FloatBorder = {
+                            guifg = color.purple600,
+                            guibg = color.white,
+                        },
                     },
                     on_open = function(term)
                         vim.cmd "startinsert!"

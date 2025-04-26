@@ -49,6 +49,17 @@ return {
                     noremap = true,
                     nowait = true,
                 },
+                mappings = {
+                    ["<space>"] = "none", -- 禁用默认展开键
+                    ["f"] = function()
+                        local builtin = require "telescope.builtin"
+                        builtin.find_files()
+                    end,
+                    ["<leader>f"] = function()
+                        local builtin = require "telescope.builtin"
+                        builtin.find_files()
+                    end,
+                },
             },
             filesystem = {
                 -- hijack_netrw_behavior = "open_current", -- 接管 netrw
