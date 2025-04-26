@@ -38,14 +38,6 @@ return {
             desc = "Telescope symbols (Workspce)",
         },
         {
-            "<leader>D",
-            function()
-                local builtin = require "telescope.builtin"
-                builtin.diagnostics()
-            end,
-            desc = "Telescope diagnostics",
-        },
-        {
             "<leader>'",
             function()
                 local builtin = require "telescope.builtin"

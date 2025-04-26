@@ -29,7 +29,7 @@ return {
             enable = false,
         },
         code_action = {
-            num_shortcut = false,
+            num_shortcut = true,
             show_server_name = true,
             extend_gitsigns = false,
             only_in_cursor = true,
@@ -60,11 +60,18 @@ return {
             enable = true,
             -- 位置控制
             sign = false,
-            virtual_text = false,
+            virtual_text = true,
             sign_priority = 20,
             -- 自定义图标位置
             update_in_insert = false,
             enable_in_insert = true,
+        },
+        diagnostic = {
+            diagnostic_only_current = true,
+            virtual_text = true,
+            keys = {
+                quit = { "q", "<ESC>" },
+            },
         },
     },
     keys = {
@@ -86,9 +93,16 @@ return {
         {
             "<leader>d",
             function()
-                vim.cmd "Lspsaga diagnostic_jump_next"
+                vim.cmd "Lspsaga show_curosr_diagnostics"
             end,
             desc = "Show current or next diagnostic",
+        },
+        {
+            "<leader>D",
+            function()
+                vim.cmd "Lspsaga show_workspace_diagnostics ++float"
+            end,
+            desc = "Show workspace diagnostic",
         },
         {
             "<leader><leader>",
