@@ -89,6 +89,8 @@ return {
                 CodeActionText = { fg = color.gray800 },
                 CodeActionNumber = { fg = color.gray800 },
                 CodeActionCursorLine = { fg = color.red100, bg = color.red100 },
+                UfoFoldedBg = { bg = color.green200 },
+                MoreMsg = { bg = color.lime100 },
             }
         end,
         integrations = {

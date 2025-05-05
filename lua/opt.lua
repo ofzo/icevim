@@ -10,7 +10,7 @@ g.autoformat = true
 
 opt.number = true
 opt.background = "light"
-opt.cursorline = false
+opt.cursorline = true
 
 opt.tabstop = 4
 opt.shiftwidth = 0
@@ -85,3 +85,5 @@ opt.fillchars = {
 vim.lsp.inlay_hint.enable(true, nil)
 
 opt.foldlevel = 99 -- 设置折叠层级为最高（全部展开）
+
+opt.shortmess:append "I"

@@ -10,7 +10,7 @@ if file == nil then
         vim.fn.system "echo 'git@github.com:%s' > ~/.config/nvim/git_tmp.txt"
         vim.env.GITHUB = "git@github.com:%s"
     else
-        vim.fn.system "echo 'https://github.com/%s ' > ~/.config/nvim/git_tmp.txt"
+        vim.fn.system "echo 'https://github.com/%s' > ~/.config/nvim/git_tmp.txt"
         vim.env.GITHUB = "https://github.com/%s"
     end
 else

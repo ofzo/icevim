@@ -21,7 +21,7 @@ vim.api.nvim_create_autocmd("ModeChanged", {
             ["^V"] = { bg = color.violet100 },
         }
         -- print("color = ", background[mode.mode])
-        vim.api.nvim_set_hl(0, "CursorLine", background[mode.mode] or background.n)
+        -- vim.api.nvim_set_hl(0, "CursorLine", background[mode.mode] or background.n)
         -- vim.api.nvim_set_hl(0, "CursorLineNr", background[mode.mode] or background.n)
         -- vim.api.nvim_set_hl(0, "CursorLineSign", background[mode.mode] or background.n)
     end,
