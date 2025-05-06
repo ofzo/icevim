@@ -18,7 +18,7 @@ return {
                 },
             },
             ghost_text = {
-                enabled = false,
+                enabled = true,
                 show_with_menu = false, -- only show when menu is closed
             },
             menu = {
@@ -84,10 +84,10 @@ return {
         },
         sources = {
             default = { "path", "lsp", "snippets", "buffer" },
-            min_keyword_length = 2,
+            min_keyword_length = 1,
             providers = {
                 lsp = {
-                    min_keyword_length = 2,
+                    min_keyword_length = 0,
                 },
             },
         },

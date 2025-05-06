@@ -13,8 +13,9 @@ return {
         show_keys = true, -- show the currently pressed key and its label as a message in the command line
         win = {
             no_overlap = true,
-            padding = { 1, 2 }, -- extra window padding [top/bottom, right/left]
-            title = false,
+            padding = { 1, 1 }, -- extra window padding [top/bottom, right/left]
+            title = true,
+            title_pos = "center",
         },
         triggers = {
             -- { "<auto>", mode = "nxso" },
@@ -31,6 +32,9 @@ return {
         keys = {
             scroll_down = "<Down>", -- binding to scroll down inside the popup
             scroll_up = "<Up>", -- binding to scroll up inside the popup
+        },
+        icons = {
+            colors = true,
         },
     },
     keys = {

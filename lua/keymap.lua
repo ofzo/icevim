@@ -6,18 +6,17 @@ vim.cmd [[
     lcd %:p:h
     command Q q
     command W w
-    noremap ! q
 
-    noremap ; :
-    noremap ! q
-    noremap mm %
-    noremap % ggVG$
-    noremap <leader>c gcc
+    nnoremap <silent><nowait>; :
+    nnoremap <silent><nowait>@ q
+    nnoremap <silent><nowait>mm %
+    nnoremap <silent><nowait>% ggVG$
+    nnoremap <silent><nowait><leader>c gcc
 
-    noremap x V
+    nnoremap x V
     noremap <leader>e :Neotree reveal<CR>
 
-    noremap <silent><nowait><C-s> :write<CR>
+    inoremap <silent><nowait><C-s> :write<CR>
     nnoremap <silent><nowait>S :write<CR>
     xnoremap <silent><nowait>S :write<CR>
 

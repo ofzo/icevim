@@ -137,6 +137,9 @@ return {
                 local safe_dir = vim.fn.fnameescape(dir_path)
                 -- 打开 NeoTree 并聚焦
                 vim.cmd [[ Neotree show ]]
+                vim.defer_fn(function()
+                    vim.cmd [[ Neotree focus ]]
+                end, 300)
             end
         end
     end,

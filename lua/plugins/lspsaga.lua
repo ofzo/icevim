@@ -1,3 +1,22 @@
+-- 判断光标下是否有非空白字符
+local function has_char_under_cursor()
+    -- 获取光标位置（行号从 1 开始，列号从 1 开始）
+    local row, col = unpack(vim.api.nvim_win_get_cursor(0))
+    local line = vim.api.nvim_get_current_line() -- 获取当前行内容
+
+    -- 转换为 Lua 字符串索引（Lua 字符串从 1 开始）
+    local char_pos = col
+
+    -- 检查列号是否超出字符串长度
+    if char_pos > #line then
+        return false
+    end
+
+    -- 获取光标下的字符并检查
+    local char = line:sub(char_pos, char_pos)
+    return char:match "%S" ~= nil -- 使用正则匹配非空白字符
+end
+
 -- https://nvimdev.github.io/lspsaga/
 return {
     "nvimdev/lspsaga.nvim",
@@ -67,10 +86,15 @@ return {
             enable_in_insert = true,
         },
         diagnostic = {
-            diagnostic_only_current = true,
+            diagnostic_only_current = false,
             virtual_text = true,
             keys = {
                 quit = { "q", "<ESC>" },
+            },
+        },
+        rename = {
+            keys = {
+                quit = { "<ESC>" },
             },
         },
     },
@@ -79,7 +103,9 @@ return {
         {
             "<leader>r",
             function()
-                vim.cmd "Lspsaga rename"
+                if has_char_under_cursor() then
+                    vim.cmd "Lspsaga rename"
+                end
             end,
             desc = "Rename symbol",
         },
@@ -93,9 +119,16 @@ return {
         {
             "<leader>d",
             function()
-                vim.cmd "Lspsaga show_curosr_diagnostics"
+                vim.cmd "Lspsaga show_line_diagnostics"
             end,
-            desc = "Show current or next diagnostic",
+            desc = "Show current line diagnostic",
+        },
+        {
+            "<leader>k",
+            function()
+                vim.cmd "Lspsaga show_buf_diagnostics"
+            end,
+            desc = "Show current buffer diagnostic",
         },
         {
             "<leader>D",
