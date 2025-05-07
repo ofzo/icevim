@@ -14,78 +14,42 @@ vim.cmd [[
     nnoremap <silent><nowait><leader>c gcc
 
     nnoremap x V
-    noremap <leader>e :Neotree reveal<CR>
+    nnoremap X V
 
     inoremap <silent><nowait><C-s> :write<CR>
     nnoremap <silent><nowait>S :write<CR>
-    xnoremap <silent><nowait>S :write<CR>
+    vnoremap <silent><nowait>S :write<CR>
 
     nnoremap <silent><nowait>- <C-x>
     nnoremap <silent><nowait>+ <C-a>
-    xnoremap <silent><nowait>- <C-x>
-    xnoremap <silent><nowait>+ <C-a>
+    vnoremap <silent><nowait>- <C-x>
+    vnoremap <silent><nowait>+ <C-a>
 
     nnoremap <silent><nowait><Tab> >>
     nnoremap <silent><nowait><S-Tab> <<
-    xnoremap <silent><nowait><Tab> >>gv=gv
-    xnoremap <silent><nowait><S-Tab> <<gv=gv
+    vnoremap <silent><nowait><Tab> >gv
+    vnoremap <silent><nowait><S-Tab> <gv
 
-    xnoremap <silent><nowait>x <Down> 
-    xnoremap <silent><nowait>X <Up> 
+    vnoremap <silent><nowait>x <Down> 
+    vnoremap <silent><nowait>X <Up> 
 
     nnoremap <silent><nowait><A-j> :move .+1<CR>==
     nnoremap <silent><nowait><A-k> :move .-2<CR>==
-    xnoremap <silent><nowait><A-j> :m '>+1<CR>gv=gv
-    xnoremap <silent><nowait><A-k> :m '<-2<CR>gv=gv
+    vnoremap <silent><nowait><A-j> :m '>+1<CR>gv=gv
+    vnoremap <silent><nowait><A-k> :m '<-2<CR>gv=gv
 
     nnoremap <silent><nowait>d "_dl
-    xnoremap <silent><nowait>d "_d
-    
+    vnoremap <silent><nowait>d "_d
+   
+    vnoremap <silent><nowait>i <ESC><ESC>i
+    vnoremap <silent><nowait>I <ESC><ESC>I
+    vnoremap <silent><nowait>a <ESC><ESC>a
+    vnoremap <silent><nowait>A <ESC><ESC>A
+    vnoremap <silent><nowait>o <ESC><ESC>o
+    vnoremap <silent><nowait>O <ESC><ESC>O
+
     au VimLeave * set guicursor=a:ver25-blinkon0
 ]]
-
--- normal mode
--- keyset("n", "x", "V", opt)
--- keyset("n", "<leader>e", ":Neotree reveal<CR>", opt)
--- keyset({ "n", "v" }, "q", "bnext", opt)
---
--- keyset("n", "-", "<C-x>", opt)
--- keyset("n", "+", "<C-a>", opt)
---
--- -- keyset({ "n", "v", "i" }, "<C-s>", "slient! write<CR>", opt)
--- keyset({ "n", "v" }, "S", ":slient! write<CR>", opt)
---
--- keyset({ "n", "v" }, "<Tab>", function()
---     feedkeys(">>", "v", true)
--- end, opt)
--- keyset({ "n", "v" }, "<S-Tab>", function()
---     feedkeys("<<", "v", true)
--- end, opt)
---
--- keyset("n", "<A-j>", ":move .+1<CR>==", opt)
--- keyset("n", "<A-k>", ":move .-2<CR>==", opt)
--- keyset("v", "<A-j>", ":move '>+1<CR>gv=gv", opt)
--- keyset({ "n", "v" }, "d", '"_d')
---
--- -- visual mode
--- keyset("v", "x", function()
---     feedkeys("j", "n", false)
--- end, opt)
--- keyset("v", "X", function()
---     feedkeys("k", "n", false)
--- end, opt)
--- keyset("v", "q", function()
---     vim.cmd "close"
--- end, opt)
--- keyset("v", "i", function()
---     feedkeys("i", "n", false)
--- end, opt)
--- keyset("v", "a", function()
---     feedkeys("a", "n", false)
--- end, opt)
--- keyset("v", "o", function()
---     feedkeys("o", "n", false)
--- end, opt)
 
 --- insert
 keyset({ "i", "n" }, "<A-Left>", function()

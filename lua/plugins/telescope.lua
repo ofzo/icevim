@@ -73,7 +73,7 @@ return {
     },
     opts = {
         defaults = {
-            file_ignore_patterns = { "^%.git[/\\]", "[/\\]%.git[/\\]" },
+            file_ignore_patterns = { "^%.git[/\\]", "[/\\]%.git[/\\]", "node_modules" },
             path_display = { "truncate" },
             sorting_strategy = "ascending",
             layout_config = {

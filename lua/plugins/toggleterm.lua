@@ -151,5 +151,50 @@ return {
             end,
             desc = "Search & Replace",
         },
+        {
+            "<leader>z",
+            function()
+                local Terminal = require("toggleterm.terminal").Terminal
+                local color = require "palette"
+                local yazi = Terminal:new {
+                    cmd = "yazi",
+                    hidden = true,
+                    direction = "float",
+                    float_opts = {
+                        border = "rounded",
+                        relative = "editor",
+                        width = width,
+                        height = height,
+                    },
+                    highlights = {
+                        FloatBorder = {
+                            guifg = color.yellow600,
+                            guibg = color.white,
+                        },
+                    },
+                    on_open = function(term)
+                        vim.api.nvim_buf_set_keymap(
+                            term.bufnr,
+                            "n",
+                            "<ESC>",
+                            "<cmd>close<CR>",
+                            { noremap = true, silent = true }
+                        )
+                    end,
+                    -- function to run on closing the terminal
+                    on_close = function(term)
+                        vim.cmd [[ Neotree refresh ]]
+                    end,
+                    winbar = {
+                        enabled = true,
+                        name_formatter = function(term) --  term: Terminal
+                            return term.name
+                        end,
+                    },
+                }
+                yazi:toggle()
+            end,
+            desc = "Toggle yazi",
+        },
     },
 }

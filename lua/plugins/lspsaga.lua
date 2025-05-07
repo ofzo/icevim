@@ -214,5 +214,10 @@ return {
     },
     config = function(_, opts)
         require("lspsaga").setup(opts)
+
+        vim.diagnostic.config {
+            virtual_text = false,
+            signs = false,
+        }
     end,
 }
