@@ -83,7 +83,7 @@ return {
             end,
         },
         sources = {
-            default = { "path", "lsp", "snippets", "buffer" },
+            default = { "path", "lsp" },
             min_keyword_length = 1,
             providers = {
                 lsp = {

@@ -86,7 +86,7 @@ return {
             enable_in_insert = true,
         },
         diagnostic = {
-            diagnostic_only_current = false,
+            diagnostic_only_current = true,
             virtual_text = true,
             keys = {
                 quit = { "q", "<ESC>" },
