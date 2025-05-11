@@ -1,6 +1,6 @@
 return {
     "Pocco81/auto-save.nvim",
-    enabled = false,
+    enabled = true,
     config = function()
         require("auto-save").setup {
             enabled = false, -- 默认启用

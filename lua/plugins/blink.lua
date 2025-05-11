@@ -1,6 +1,7 @@
 return {
     "saghen/blink.cmp",
     -- version = "*",
+    build = "cargo build --release",
     dependencies = {
         "rafamadriz/friendly-snippets",
     },
@@ -88,6 +89,7 @@ return {
             providers = {
                 lsp = {
                     min_keyword_length = 0,
+                    score_offset = 1000,
                 },
             },
         },
