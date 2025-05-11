@@ -5,7 +5,7 @@ return {
         setup = {
             setting = {
                 diagnostics = {
-                    enable = false,
+                    enable = true,
                 },
             },
         },

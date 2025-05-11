@@ -50,7 +50,7 @@ return {
         end
 
         local lspconfig = require "lspconfig"
-        local package_to_lspconfig = require("mason-lspconfig.mappings.server").package_to_lspconfig
+        local package_to_lspconfig = require("mason-lspconfig.mappings").get_mason_map().package_to_lspconfig
         local installed_packages = registry.get_installed_package_names()
 
         local configure = require "lsp_configure"
@@ -79,7 +79,9 @@ return {
             end
 
             setup = vim.tbl_deep_extend("force", setup, {
-                capabilities = require("blink.cmp").get_lsp_capabilities(),
+                capabilities = require("blink.cmp").get_lsp_capabilities {
+                    textDocument = { completion = { completionItem = { snippetSupport = false } } },
+                },
                 inlay_hints = {
                     enabled = true,
                 },

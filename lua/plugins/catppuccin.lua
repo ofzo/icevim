@@ -79,10 +79,10 @@ return {
                 cssMedia = { fg = color.violet800 },
                 WhichKeyDesc = { fg = color.gray800 },
 
-                BlinkCmpMenu = { bg = color.sky100 },
+                BlinkCmpMenu = { bg = color.rose100 },
                 BlinkCmpDoc = { bg = color.white },
                 BlinkCmpMenuBorder = { fg = color.purple600 },
-                BlinkCmpMenuSelection = { fg = color.white, bg = color.purple600 },
+                BlinkCmpMenuSelection = { fg = color.white, bg = color.rose600 },
                 FloatBorder = { fg = color.red600 },
                 SagaBorder = { fg = color.red600 },
 
