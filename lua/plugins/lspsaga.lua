@@ -86,7 +86,7 @@ return {
             enable_in_insert = true,
         },
         diagnostic = {
-            diagnostic_only_current = true,
+            diagnostic_only_current = false,
             virtual_text = true,
             keys = {
                 quit = { "q", "<ESC>" },
@@ -214,10 +214,5 @@ return {
     },
     config = function(_, opts)
         require("lspsaga").setup(opts)
-
-        vim.diagnostic.config {
-            virtual_text = false,
-            signs = false,
-        }
     end,
 }

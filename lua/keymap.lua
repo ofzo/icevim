@@ -49,6 +49,10 @@ vim.cmd [[
     vnoremap <silent><nowait>O <ESC><ESC>O
 
     au VimLeave * set guicursor=a:ver25-blinkon0
+    unmap grr
+    unmap gra
+    unmap grn
+    unmap gri
 ]]
 
 --- insert
