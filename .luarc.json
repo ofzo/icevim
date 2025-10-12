@@ -4,6 +4,7 @@
     ],
     "diagnostics.globals": [
         "vim",
-        "rename"
+        "rename",
+        "Snacks"
     ]
 }

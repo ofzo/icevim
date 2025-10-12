@@ -4,6 +4,7 @@ return {
         "gbrlsnchs/telescope-lsp-handlers.nvim",
     },
     event = "VeryLazy",
+    enabled = false,
     keys = {
         {
             "<leader>f",

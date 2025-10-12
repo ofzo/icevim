@@ -3,9 +3,9 @@ return {
     enabled = true,
     config = function()
         require("auto-save").setup {
-            enabled = false, -- 默认启用
-            trigger_events = { "InsertLeave", "TextChanged", "FocusLost" }, -- 触发事件
-            debounce_delay = 500, -- 防抖延迟（毫秒）
+            enabled = true, -- 默认启用
+            trigger_events = { "FocusLost", "InsertLeave" }, -- 触发事件
+            debounce_delay = 1000, -- 防抖延迟（毫秒）
             execution_message = {
                 message = function()
                     return ""

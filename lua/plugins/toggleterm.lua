@@ -16,7 +16,14 @@ return {
     },
     keys = {
         {
-            "<leader>b",
+            "<esc>",
+            function()
+                vim.cmd "startinsert!"
+            end,
+            mode = { "t" },
+        },
+        {
+            "<leader>`",
             function()
                 local Terminal = require("toggleterm.terminal").Terminal
                 local term = Terminal:new {
@@ -73,6 +80,7 @@ return {
                         relative = "editor",
                         width = width,
                         height = height,
+                        title = "LazyGit",
                     },
                     highlights = {
                         FloatBorder = {
@@ -90,10 +98,6 @@ return {
                         )
                     end,
                     -- function to run on closing the terminal
-                    on_close = function(term)
-                        vim.cmd [[ Neotree refresh ]]
-                        vim.cmd "startinsert!"
-                    end,
                     winbar = {
                         enabled = true,
                         name_formatter = function(term) --  term: Terminal

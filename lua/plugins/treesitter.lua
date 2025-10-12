@@ -76,6 +76,8 @@ return {
                 "sql",
                 "tsx",
                 "scss",
+                "less",
+                "vue",
             },
             -- Install parsers synchronously (only applied to `ensure_installed`)
             sync_install = false,

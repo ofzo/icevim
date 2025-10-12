@@ -23,13 +23,6 @@ return {
             end,
             desc = "Toggle Float Explorer Focus",
         },
-        {
-            "<leader>g",
-            function()
-                vim.cmd [[ Neotree float git_status ]]
-            end,
-            desc = "Show Git Status",
-        },
     },
     opts = function()
         local symbols = require "symbols"
@@ -63,8 +56,7 @@ return {
                         builtin.find_files()
                     end,
                     ["<leader>f"] = function()
-                        local builtin = require "telescope.builtin"
-                        builtin.find_files()
+                        Snacks.picker.smart()
                     end,
                 },
             },
@@ -127,20 +119,5 @@ return {
         }
 
         require("neo-tree").setup(opts)
-        -- 检查参数数量是否为1（排除 Neovim 自身参数）
-        if vim.fn.argc() == 1 then
-            -- 转换为绝对路径并检查是否为目录
-            local arg = tostring(vim.fn.argv(0)) -- 转换为 Lua 字符串
-            local dir_path = vim.fn.fnamemodify(arg, ":p")
-            if vim.fn.isdirectory(dir_path) == 1 then
-                -- 安全转义路径中的特殊字符
-                local safe_dir = vim.fn.fnameescape(dir_path)
-                -- 打开 NeoTree 并聚焦
-                vim.cmd [[ Neotree show ]]
-                vim.defer_fn(function()
-                    vim.cmd [[ Neotree focus ]]
-                end, 300)
-            end
-        end
     end,
 }

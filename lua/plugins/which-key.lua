@@ -46,23 +46,15 @@ return {
             desc = "Buffer Global Keymaps (which-key)",
         },
         {
-            "<c-`>",
-            ":ToggleTerm<CR>",
-        },
-        {
-            mode = { "n", "x", "v" },
-            "ge",
-            "G",
-        },
-        {
-            mode = { "n", "x", "v" },
-            "gl",
-            "$",
-        },
-        {
-            mode = { "n", "x", "v" },
-            "gh",
-            "^",
+            "F",
+            function()
+                vim.lsp.buf.format {
+                    async = false,
+                    filter = function(client)
+                        return client.name == "null-ls"
+                    end,
+                }
+            end,
         },
     },
 }

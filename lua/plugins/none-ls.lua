@@ -20,7 +20,7 @@ return {
 
         null_ls.setup(vim.tbl_deep_extend("keep", opts, { sources = sources }))
         -- 保存时自动格式化（全局生效）
-        vim.api.nvim_create_autocmd("BufWritePre", {
+        vim.api.nvim_create_autocmd({ "FocusLost" }, {
             pattern = "*",
             callback = function()
                 -- 执行格式化（使用 null-ls）

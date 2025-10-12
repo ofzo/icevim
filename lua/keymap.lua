@@ -3,7 +3,7 @@ local keyset = vim.keymap.set
 local feedkeys = vim.api.nvim_feedkeys
 
 vim.cmd [[
-    source ~/.config/nvim/lua/keymap.vim
+    "" source ~/.config/nvim/lua/keymap.vim
     lcd %:p:h
     command Q q
     command W w
@@ -54,6 +54,10 @@ vim.cmd [[
     unmap gra
     unmap grn
     unmap gri
+
+    nnoremap ge G
+    nnoremap gl $
+    nnoremap gh ^
 ]]
 
 --- insert
