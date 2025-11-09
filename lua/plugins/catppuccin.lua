@@ -46,8 +46,6 @@ return {
                 Cursor = { bg = color.sky200, style = {} },
                 lCursor = { bg = color.sky200, style = {} },
                 CursorIM = { bg = color.sky200 },
-                MultipleCursorsCursor = { bg = color.sky200 },
-                MultipleCursoesCursor = { bg = color.sky200 },
                 ----
 
                 DiagnosticUnderlineError = { bg = color.red50, style = {} },
@@ -91,6 +89,9 @@ return {
                 CodeActionCursorLine = { fg = color.red100, bg = color.red100 },
                 UfoFoldedBg = { bg = color.green200 },
                 MoreMsg = { bg = color.lime100 },
+
+                MultiCursor = { bg = color.rose100 },
+                MultiCursorMain = { bg = color.rose200 },
             }
         end,
         integrations = {

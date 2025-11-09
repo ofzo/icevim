@@ -1,6 +1,7 @@
 -- 判断光标下是否有非空白字符
 local function has_char_under_cursor()
     -- 获取光标位置（行号从 1 开始，列号从 1 开始）
+    ---@diagnostic disable-next-line: deprecated
     local row, col = unpack(vim.api.nvim_win_get_cursor(0))
     local line = vim.api.nvim_get_current_line() -- 获取当前行内容
 
@@ -124,14 +125,14 @@ return {
             desc = "Show current line diagnostic",
         },
         {
-            "<leader>k",
+            "<leader>D",
             function()
                 vim.cmd "Lspsaga show_buf_diagnostics"
             end,
             desc = "Show current buffer diagnostic",
         },
         {
-            "<leader>D",
+            "D",
             function()
                 vim.cmd "Lspsaga show_workspace_diagnostics ++float"
             end,

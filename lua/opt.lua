@@ -26,14 +26,14 @@ opt.smartcase = true
 -- Disable the ugly highlight during searches
 opt.hlsearch = false
 
-opt.cmdheight = 1
+opt.cmdheight = 0
 opt.cmdwinheight = 1
 
 -- Auto load the file when modified externally
 opt.autoread = true
 opt.autowrite = true
 
-opt.wrap = false
+opt.wrap = true
 
 -- Add mouse support for all modes
 opt.mouse = "a"
@@ -56,7 +56,7 @@ opt.termguicolors = true
 -- This affects both neovim's native completion and that of nvim-cmp
 opt.pumheight = 16
 
-opt.showmode = false
+opt.showmode = true
 
 opt.laststatus = 3
 opt.termguicolors = true
@@ -66,8 +66,8 @@ opt.signcolumn = "yes:1"
 -- opt.cursorlineopt = "both"
 
 -- 实用设置
-opt.scrolloff = 6 -- 保持光标周围始终有8行显示
-opt.sidescrolloff = 6 -- 水平滚动时保持8列显示
+opt.scrolloff = 6 -- 保持光标周围始终有6行显示
+opt.sidescrolloff = 6 -- 水平滚动时保持6列显示
 
 opt.clipboard = "unnamedplus"
 
