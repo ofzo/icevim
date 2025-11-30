@@ -52,8 +52,7 @@ return {
                 mappings = {
                     ["<space>"] = "none", -- 禁用默认展开键
                     ["f"] = function()
-                        local builtin = require "telescope.builtin"
-                        builtin.find_files()
+                        Snacks.picker.smart()
                     end,
                     ["<leader>f"] = function()
                         Snacks.picker.smart()

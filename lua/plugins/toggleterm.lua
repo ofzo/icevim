@@ -23,7 +23,7 @@ return {
             mode = { "t" },
         },
         {
-            "<leader>`",
+            "<C-`>",
             function()
                 local Terminal = require("toggleterm.terminal").Terminal
                 local term = Terminal:new {

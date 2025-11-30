@@ -125,14 +125,22 @@ return {
             desc = "Show current line diagnostic",
         },
         {
-            "<leader>D",
+            "D",
             function()
                 vim.cmd "Lspsaga show_buf_diagnostics"
             end,
             desc = "Show current buffer diagnostic",
         },
         {
-            "D",
+            "<A-d>",
+            function()
+                vim.cmd "Lspsaga show_buf_diagnostics"
+            end,
+            desc = "Show current buffer diagnostic",
+            mode = { "i" },
+        },
+        {
+            "<leader>D",
             function()
                 vim.cmd "Lspsaga show_workspace_diagnostics ++float"
             end,
@@ -169,14 +177,14 @@ return {
             desc = "Outline",
         },
         {
-            "co",
+            "gco",
             function()
                 vim.cmd "Lspsaga outgoing_calls"
             end,
             desc = "Outgoing calls",
         },
         {
-            "ci",
+            "gci",
             function()
                 vim.cmd "Lspsaga incoming_calls"
             end,
@@ -205,7 +213,6 @@ return {
             end,
             desc = "Find implementation",
         },
-
         {
             "K",
             function()

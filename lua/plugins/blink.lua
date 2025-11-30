@@ -54,8 +54,8 @@ return {
         },
         cmdline = {
             keymap = {
-                ["<CR>"] = { "accept", "accept_and_enter", "fallback" },
-                ["<Space>"] = { "accept", "fallback" },
+                ["<CR>"] = { "accept_and_enter", "fallback" },
+                ["<Space>"] = { "fallback" },
                 ["<Tab>"] = { "show", "show_and_insert", "select_next" },
                 ["<Up>"] = { "select_prev", "fallback" },
                 ["<Down>"] = { "select_next", "fallback" },

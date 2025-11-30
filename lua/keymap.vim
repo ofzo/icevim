@@ -27,10 +27,10 @@
     vnoremap <silent><nowait>x <Down> 
     vnoremap <silent><nowait>X <Up> 
 
-    nnoremap <silent><nowait><A-j> :move .+1<CR>==
-    nnoremap <silent><nowait><A-k> :move .-2<CR>==
-    vnoremap <silent><nowait><A-j> :m '>+1<CR>gv=gv
-    vnoremap <silent><nowait><A-k> :m '<-2<CR>gv=gv
+    nnoremap <silent><nowait><C-j> :move .+1<CR>==
+    nnoremap <silent><nowait><C-k> :move .-2<CR>==
+    vnoremap <silent><nowait><C-j> :m '>+1<CR>gv=gv
+    vnoremap <silent><nowait><C-k> :m '<-2<CR>gv=gv
 
     nnoremap <silent><nowait>d "_dl
     vnoremap <silent><nowait>d "_d

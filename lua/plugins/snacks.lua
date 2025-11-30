@@ -19,6 +19,16 @@ return {
         scroll = { enabled = true },
         statuscolumn = { enabled = false },
         words = { enabled = true },
+        scratch = {
+            -- your scratch configuration comes here
+            -- or leave it empty to use the default settings
+            -- refer to the configuration section below
+            name = "Scratch",
+            ft = function()
+                return "markdown"
+            end,
+            autowrite = true, -- automatically write when the buffer is hidden
+        },
     },
     keys = {
         {
